@@ -5,7 +5,9 @@ import Chat from './components/Chat';
 import JoinRoom from './components/JoinRoom';
 import './App.css';
 
-const socket = io.connect(process.env.REACT_APP_SOCKET_URL);
+console.log('process.env.REACT_APP_SOCKET_URL', process.env.REACT_APP_SOCKET_URL || 'http://localhost:8000');
+
+const socket = io.connect(process.env.REACT_APP_SOCKET_URL || 'http://localhost:8000');
 
 function App() {
   const [username, setUsername] = useState('');

@@ -63,6 +63,8 @@ function Chat({ username, room, socket }) {
       timestamp: new Date()
     };
 
+    console.log('emitting to socket', messageData)
+
     // Send message to server
     await socket.emit('send_message', messageData);
     setMessage('');
